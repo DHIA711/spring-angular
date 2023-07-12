@@ -30,30 +30,30 @@ public class ProviderController {
     //private ProviderRepository providerRepository;
     ProviderService providerService;
 
-    @GetMapping("/api")
+    @GetMapping("/")
     public List<Provider> getAllProviders() {
 
         return providerService.getAllProviders();
 
     }
 
-    @PostMapping("/api")
+    @PostMapping("/")
     public Provider createProvider(@Valid @RequestBody Provider provider) {
         return providerService.saveProvider(provider);
     }
 
-    @PutMapping("/api/{providerId}")
+    @PutMapping("//{providerId}")
     public Provider updateProvider(@PathVariable Long providerId, @Valid @RequestBody Provider providerRequest) {
         return providerService.updateProvider(providerId,providerRequest);
     }
 
 
-    @DeleteMapping("/api/{providerId}")
+    @DeleteMapping("//{providerId}")
     public Provider deleteProvider(@PathVariable Long providerId) {
         return providerService.deleteProvider(providerId);
     }
 
-    @GetMapping("/api/{providerId}")
+    @GetMapping("//{providerId}")
     public Provider getProvider(@PathVariable Long providerId) {
         return providerService.getOneProviderById(providerId);
     }
