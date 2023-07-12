@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProviderService {
 
-  urlProviders = 'http://51.91.102.150:8089/providers/';
+  urlProviders = '/api/providers/';
 
 
   constructor(private Http: HttpClient) { }
