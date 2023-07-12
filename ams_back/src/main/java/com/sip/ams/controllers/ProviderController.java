@@ -23,37 +23,37 @@ import com.sip.ams.entities.Provider;
 import com.sip.ams.repositories.ProviderRepository;
 
 @RestController
-@RequestMapping({"/providers"})
+@RequestMapping({"/api/providers"})
 @CrossOrigin(origins="*")
 public class ProviderController {
     @Autowired
     //private ProviderRepository providerRepository;
     ProviderService providerService;
 
-    @GetMapping("/")
+    @GetMapping("/api")
     public List<Provider> getAllProviders() {
 
         return providerService.getAllProviders();
 
     }
 
-    @PostMapping("/")
+    @PostMapping("/api")
     public Provider createProvider(@Valid @RequestBody Provider provider) {
         return providerService.saveProvider(provider);
     }
 
-    @PutMapping("/{providerId}")
+    @PutMapping("/api/{providerId}")
     public Provider updateProvider(@PathVariable Long providerId, @Valid @RequestBody Provider providerRequest) {
         return providerService.updateProvider(providerId,providerRequest);
     }
 
 
-    @DeleteMapping("/{providerId}")
+    @DeleteMapping("/api/{providerId}")
     public Provider deleteProvider(@PathVariable Long providerId) {
         return providerService.deleteProvider(providerId);
     }
 
-    @GetMapping("/{providerId}")
+    @GetMapping("/api/{providerId}")
     public Provider getProvider(@PathVariable Long providerId) {
         return providerService.getOneProviderById(providerId);
     }
