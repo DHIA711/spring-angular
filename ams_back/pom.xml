@@ -52,7 +52,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>ams2023</finalName>
+		<finalName>${JAR_FILE}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
