@@ -42,18 +42,18 @@ public class ProviderController {
         return providerService.saveProvider(provider);
     }
 
-    @PutMapping("//{providerId}")
+    @PutMapping("/{providerId}")
     public Provider updateProvider(@PathVariable Long providerId, @Valid @RequestBody Provider providerRequest) {
         return providerService.updateProvider(providerId,providerRequest);
     }
 
 
-    @DeleteMapping("//{providerId}")
+    @DeleteMapping("/{providerId}")
     public Provider deleteProvider(@PathVariable Long providerId) {
         return providerService.deleteProvider(providerId);
     }
 
-    @GetMapping("//{providerId}")
+    @GetMapping("/{providerId}")
     public Provider getProvider(@PathVariable Long providerId) {
         return providerService.getOneProviderById(providerId);
     }
