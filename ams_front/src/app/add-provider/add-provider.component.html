@@ -1,0 +1,19 @@
+<h2 align="center">{{titre}}</h2>
+<img [src]="imgPlus" width="25px">
+
+<form #data="ngForm"  (ngSubmit)="persistProvider(data.value)">
+
+  Name : <input type="text" ngModel class="form-control" name="name" />
+  Address : <input type="text" ngModel class="form-control" name="address" />
+  Email : <input type="email" ngModel class="form-control" name="email" />
+
+
+ <button type="submit" class="btn btn-primary" value="Ajouter" style="margin-top:5px">Ajouter<i style="margin-left:5px" class="fa fa-plus" aria-hidden="true"></i>
+ </button>
+</form>
+
+
+<h3>Exemple Two Way data binding</h3>
+Taper un mot : <input type="text" [(ngModel)]="formation" />
+{{formation}}
+

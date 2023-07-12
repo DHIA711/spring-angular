@@ -1,0 +1,11 @@
+FROM openjdk:11-jdk-slim
+
+WORKDIR /app   
+
+COPY target/ams2023.jar /app/app.jar
+
+EXPOSE 8089
+
+CMD ["java", "-jar", "app.jar"]
+
+
